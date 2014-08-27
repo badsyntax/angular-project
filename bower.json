@@ -1,0 +1,16 @@
+{
+  "name": "angular-project",
+  "description": "A test project in which I play around with various AngularJS concepts",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-project",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "angular-resource": "~1.2.23",
+    "bootstrap": "~3.2.0",
+    "modernizr": "~2.8.3"
+  }
+}
