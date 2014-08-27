@@ -11,8 +11,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use('/', routes.home);
-app.use('/sign-in', routes.signIn);
+app.use('/', routes);
+app.use('/sign-in', routes);
 
 var server = app.listen(config.get('port'), function() {
   console.log('Listening on port %d', server.address().port);

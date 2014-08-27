@@ -2,17 +2,43 @@
 
 /* Controllers */
 
-angular.module('app.controllers', [])
-  .controller('SignIn', ['$scope', '$location', function($scope, $location) {
+var controllersModule = angular.module('app.controllers', []);
+
+controllersModule.controller('Home', [
+  'PageData', '$scope', '$location',
+  function(PageData, $scope, $location) {
+    $scope.title = PageData.title = 'Home';
+  }
+]);
+
+controllersModule.controller('Head', [
+  'PageData', '$scope', '$location',
+  function(PageData, $scope, $location) {
+    $scope.page = PageData;
+  }
+]);
+
+controllersModule.controller('Header', [
+  'PageData', '$scope', '$location',
+  function(PageData, $scope, $location) {
+    $scope.page = PageData;
+  }
+]);
+
+controllersModule.controller('SignIn', [
+  'PageData', '$scope', '$location',
+  function(PageData, $scope, $location) {
     $scope.username = '';
-    $scope.title = 'Sign In';
+    $scope.title = PageData.title = 'Sign In';
     $scope.signIn = function() {
       $location.path('/stream/' + $scope.username);
     };
-  }])
-  .controller('Stream', [
-    'TwitterApi', '$scope', '$routeParams', '$location',
-    function(TwitterApi, $scope, $routeParams, $location) {
+  }
+]);
+
+controllersModule.controller('Stream', [
+  'TwitterApiService', '$scope', '$routeParams', '$location',
+  function(TwitterApi, $scope, $routeParams, $location) {
 
     var count = 10;
     var maxId = '';
@@ -59,4 +85,5 @@ angular.module('app.controllers', [])
     };
 
     $scope.load();
-  }]);
+  }
+]);

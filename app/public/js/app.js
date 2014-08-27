@@ -7,7 +7,17 @@ angular.module('app', [
   'app.directives',
   'app.controllers'
 ])
-.config(['$routeProvider', function($routeProvider) {
+.config([
+  '$locationProvider', '$routeProvider',
+  function($locationProvider, $routeProvider) {
+
+  $locationProvider.html5Mode(true);
+
+  $routeProvider
+    .when('/', {
+      templateUrl: 'partials/home.html',
+      controller: 'Home'
+    });
 
   $routeProvider
     .when('/sign-in', {
@@ -22,6 +32,6 @@ angular.module('app', [
     });
 
   $routeProvider.otherwise({
-    redirectTo: '/sign-in'
+    redirectTo: '/'
   });
 }]);

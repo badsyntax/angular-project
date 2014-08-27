@@ -16,3 +16,9 @@ appServices.factory('TwitterApi', ['$resource', '$location', function($resource,
     }
   });
 }]);
+
+appServices.factory('PageData', ['$resource', function($resource){
+  return {
+    title: ''
+  };
+}]);
