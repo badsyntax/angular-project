@@ -24,6 +24,7 @@
     "protractor": "protractor test/protractor-conf.js"
   },
   "dependencies": {
+    "ejs": "^1.0.0",
     "express": "^4.8.5",
     "nconf": "^0.6.9",
     "twit": "^1.1.18"
