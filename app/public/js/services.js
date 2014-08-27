@@ -2,10 +2,10 @@
 
 /* Services */
 
-var appServices = angular.module('app.services', ['ngResource']).
+var module = angular.module('app.services', ['ngResource']).
   value('version', '0.1');
 
-appServices.factory('TwitterApi', ['$resource', '$location', function($resource, $location) {
+module.factory('TwitterApi', ['$resource', '$location', function($resource, $location) {
   return $resource('/timeline/:username/:count/:maxId', {
     username: '@username',
     count: '@count',
@@ -17,8 +17,10 @@ appServices.factory('TwitterApi', ['$resource', '$location', function($resource,
   });
 }]);
 
-appServices.factory('PageData', ['$resource', function($resource){
-  return {
-    title: ''
+module.factory('PageData', ['$resource', function($resource){
+  return function data() {
+    return {
+      title: ''
+    };
   };
 }]);
